@@ -1,0 +1,3 @@
+strapi new project_name --quickstart: tạo project
+cd my-project: vào project
+strapi develop: chạy project

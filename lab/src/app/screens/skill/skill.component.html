@@ -1,0 +1,29 @@
+<p>Danh sách skill</p>
+{{skillItem | json }}
+<fieldset>
+    <legend>skill</legend>
+    <div>
+        <label for="">Tên skill:</label>
+        <input type="text" placeholder="Tên skill" [value]="skillItem.name" (keyup)="skillItem.name = $event.target.value" >
+    </div>
+    <div>
+        <label for="">Ảnh:</label>
+        <input type="text" placeholder="ảnh skill" [value]="skillItem.image" (keyup)="skillItem.image = $event.target.value">
+    </div>
+    <div>
+        <label for="">mana</label>
+        <input type="text" placeholder="lượng mana" [value]="skillItem.mana" (keyup)="skillItem.mana = $event.target.value">
+    </div>
+    <div>
+        <label for="">countdown</label>
+        <input type="text" placeholder="countdown" [value]="skillItem.countdown" (keyup)="skillItem.countdown = $event.target.value">
+    </div>
+    <button (click)="saveSkill()">Lưu</button>
+</fieldset>
+<ul >
+    <ng-container *ngFor="let h of skills">
+        <li *ngIf="h.display==true">{{h.id}} - {{h.name}} - {{ h.image }} - {{ h.mana }} - {{countdown}}
+            <a href="javascript:;" (click)="editSkill(h)">Sửa</a>
+        </li>
+    </ng-container>
+</ul>
