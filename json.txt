@@ -1,0 +1,2 @@
+npm i -g json serve:tạo json
+json-server -w db.json:chạy serve

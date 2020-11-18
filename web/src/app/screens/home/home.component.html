@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div>
+    <ul>
+        <li *ngFor="let cate of cates">{{cate.name}}</li>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-4 offset-4">
+        <div class="form-group">
+            <label for="">Tên danh mục:</label>
+            <input type="text" (keyup)="newCateName = $event.target.value" class="form-control" [value]="newCateName">
+        </div>
+        <div class="text-center">
+            <button (click)="addCate()" class="btn btn-sm btn-success"> Tạo mới</button>
+        </div>
+    </div>
+</div>

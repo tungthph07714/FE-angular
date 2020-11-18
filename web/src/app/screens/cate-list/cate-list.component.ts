@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class CateListComponent implements OnInit {
   product_lst = [
     {
-      id:1,
-      name:"iphone 12"
+      id: 1,
+      name: "Iphone 12"
+    },
+    {
+      id: 2,
+      name: "Samsung note 20"
     }
   ];
-
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../../_service/category.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  cates = []
+  newCateName = "";
+constructor(private cateService: CategoryService) {}
 
   ngOnInit(): void {
   }
 
+  getCates() {
+    this.cateService.getCategory()
+                    .subscribe(data => {
+                      console.log(data);
+                      this.cates = data;
+      });
+  }
+  addCate(){
+    const data ={
+      name: this.newCateName
+    };
+    this.cateService.addCategory(data)
+                    .subscribe(newItem => {
+                      this.cates.push(newItem);
+                      this.newCateName = "";
+                    });
+  }
 }

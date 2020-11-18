@@ -1,4 +1,5 @@
 <ul>
-    <li *ngFor="let pro of product_lst"></li>
-    <a routerLink="chi-tiet-san-pham">{{pro.name}}</a>
+    <li *ngFor="let pro of product_lst">
+        <a [routerLink]="['/chi-tiet-san-pham', pro.id]">{{pro.name}}</a>
+    </li>
 </ul>
